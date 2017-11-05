@@ -1,6 +1,6 @@
 # Browser Extension Architecture {#anatomy-of-an-extension4}
 
-An extension consists of a collection of files, packaged for distribution and installation. We’ve made an [example extension](https://github.com/uncommonhacks/webextension-starter) that you can start with that implements these pieces and documents the code, but here’s an explanation in text:[Anatomy of an extension](/anatomy_of_an_extension.md)
+An extension consists of a collection of files, packaged for distribution and installation. We’ve made an [example extension](https://github.com/uncommonhacks/webextension-starter) that you can start with that implements these pieces and documents the code, but here’s an explanation of the main components:
 
 ## manifest.json {#manifest-json}
 
@@ -36,6 +36,10 @@ Your extension can include various user interface components whose content is de
 For each of these components, you create an HTML file and point to it using a specific property in [manifest.json](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json). The HTML file can include CSS and JavaScript files, just like a normal web page.
 
 All of these are a type of [Extension pages](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/user_interface/Extension_pages), and unlike a normal web page, your JavaScript can use all the same privileged WebExtension APIs as your background script. They can even directly access variables in the background page using [`runtime.getBackgroundPage()`](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getBackgroundPage).
+
+
+
+## Graphical Summary![](/assets/webextension-anatomy.png)
 
 ## Acknowledgements
 
