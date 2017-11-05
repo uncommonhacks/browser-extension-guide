@@ -1,0 +1,5 @@
+## Content Scripts {#content-scripts}
+
+Use content scripts to access and manipulate web pages. Content scripts are loaded into web pages and run in the context of that particular page. With a content script, you can write code that runs inside pages that you visit in the browser, and do things like directly modify elements on the page. You also specify content scripts in `manifest.json`, where you can specify whether the script should run on all pages or only on specific domains.
+
+Because content scripts have direct access to the content of every page you visit, there are more restrictions about what they can do. Content scripts are not able to access most privileged browser APIs. This means that, for example, you can’t get a list of the currently open tabs directly from a content script, but you can get this information through intra-extension messaging APIs—you can write code that sends a message to the background script, the background script can ask the browser for the privileged information, and then send the result back to the content script. Our example extension shows how you can do this.

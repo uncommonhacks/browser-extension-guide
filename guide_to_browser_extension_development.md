@@ -1,0 +1,1 @@
+# Guide to Browser Extension Development {#guide-to-browser-extension-development}

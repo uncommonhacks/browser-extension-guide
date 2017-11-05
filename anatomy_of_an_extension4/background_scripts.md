@@ -1,0 +1,5 @@
+## Background Scripts {#background-scripts}
+
+Extensions often need to maintain long-term state or perform long-term operations independently of the lifetime of any particular web page or browser window. That is what background scripts are for. Background scripts are loaded as soon as the extension is loaded and stay loaded until the extension is disabled or uninstalled. You can use any of the [WebExtension APIs](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API) in the script, as long as you have requested the necessary [permissions](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/permissions).
+
+You can include a background script using the `background` key in `manifest.json`. You can specify multiple background scripts: if you do, they run in the same context, just like multiple scripts that are loaded into a single web page.
