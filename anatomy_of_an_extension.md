@@ -1,6 +1,6 @@
-# Anatomy of an extension {#anatomy-of-an-extension4}
+# Browser Extension Architecture {#anatomy-of-an-extension4}
 
-An extension consists of a collection of files, packaged for distribution and installation. We’ve made an [example extension](https://github.com/uncommonhacks/webextension-starter) that you can start with that implements these pieces and documents the code, but here’s an explanation in text:
+An extension consists of a collection of files, packaged for distribution and installation. We’ve made an [example extension](https://github.com/uncommonhacks/webextension-starter) that you can start with that implements these pieces and documents the code, but here’s an explanation in text:[Anatomy of an extension](/anatomy_of_an_extension.md)
 
 ## manifest.json {#manifest-json}
 
