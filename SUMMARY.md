@@ -9,7 +9,6 @@
 * [Running Your Extension](running_your_extension.md)
 * [Good Resources](good_resources.md)
 * [Advanced Topics](advanced_topics/README.md)
-* [Interfacing with the Browser](interfacing-with-the-browser.md)
 
 
 
