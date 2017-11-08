@@ -5,9 +5,11 @@
 * [Browser Extension Architecture](browser_extension_architecture.md)
 * [JavaScript](javascript.md)
 * [Interfacing with the Browser](interfacing-with-the-browser.md)
-* [Messaging](messaging.md)
+  * [Messaging](messaging.md)
 * [Running Your Extension](running_your_extension.md)
 * [Good Resources](good_resources.md)
 * [Advanced Topics](advanced_topics/README.md)
 * [Interfacing with the Browser](interfacing-with-the-browser.md)
+
+
 
