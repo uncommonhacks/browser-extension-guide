@@ -22,7 +22,7 @@ Open `about:debugging` in Firefox, click **Load Temporary Add-on** and select an
 
 The extension will now be installed, and will stay until you restart Firefox.
 
-Alternatively, you can run the extension from the command line using the [web-ext](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Getting_started_with_web-ext) tool \(which can be handy as it launches a temporary, clean brower profile\)
+Alternatively, you can run the extension from the command line using the [web-ext](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Getting_started_with_web-ext) tool \(which can be handy as it launches a temporary, clean browser profile\)
 
 ## Debugging
 
