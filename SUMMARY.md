@@ -4,7 +4,7 @@
 * [Browsers and Extensions](browsers-and-extensions.md)
 * [Browser Extension Architecture](extension-architecture.md)
 * [JavaScript](javascript.md)
-  * [Async JS and Extensions](async-js-and-extensions.md)
+  * [Asynchronous JS](async-js.md)
 * [Interfacing with the Browser](interfacing-with-the-browser.md)
   * [Messaging](messaging.md)
 * [Running and Debugging](running-debugging.md)
