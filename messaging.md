@@ -6,7 +6,7 @@ One aspect of browser extension that can be challenging is getting the different
 
 ## Communication between background and popup
 
-A_lso applies to bundled web pages, options pages, and sidebar \(Firefox\)_
+_Also applies to bundled web pages, options pages, and sidebar \(Firefox\)_
 
 Popup and other bundled web pages in your extensions run in a priviledged context, so you can access the full set of browser APIs directly. So, for example, you can call `browser.storage.local.set()` in your background script, and `brower.storage.local.get()` in a popup, and both scripts will be accessing the same datastore. You generally shouldn't need to have the popup page and background script directly communicate with each other, but if the need arises you can use [`runtime.getBackgroundPage()`](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/runtime/getBackgroundPage), which lets you access data and call functions defined in your background script directly from the popup. You can also use the messaging APIs described in the next section, but that is generally more difficult to use.
 
