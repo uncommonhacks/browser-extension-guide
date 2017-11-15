@@ -23,7 +23,7 @@ But since querying for open tabs could potentially be a slow operation,[^1] the 
 
 [^1]: This may seem like a contrived example—does it really take long enough to query for open tabs that it merits making that an asynchronous function? Maybe, maybe not, but that's how the browser developers have chosen to implement all the browser APIs (the function calls that let you get information from the browser), so we have to deal with the implications regardless.
 
-## 1: Callbacks
+### 1. Callbacks
 
 If you were to look in the Chrome documentation about how to do this, you'd eventually find [this page](https://developer.chrome.com/extensions/tabs#method-query), which says to use:
 
@@ -46,7 +46,7 @@ function printOpenTabs() {
 }
 ```
 
-## 2: Promises
+### 2. Promises
 
 Callbacks work, but they can be difficult to reason about and very messy when you need to nest multiple callbacks. The people who make the JavaScript language realized this, so they made a slightly method: *promises*. Instead of passing a function to call back and not returning any value, `tabs.query` returns a Promise. You can then save that Promise, and when you need to use it provide a function to run using `.then(fn)`.
 
@@ -70,7 +70,7 @@ You might notice a couple of other differences that aren't particularly importan
 
 This method is *slightly* better, as it is more clear what are arguments to the query and what the function that is called with the result is, and chaining Promises together (when you have multiple dependent promises) is cleaner than nesting callbacks.
 
-## 3: Async/Await
+### 3. Async/Await
 
 But really all we want to do is get the current tabs, and then print them. The whole concept of asynchronous code execution is nice at times, but for most cases it ends up making life more difficult. The people who make the JavaScript standard eventually realized this, and came up with a new method, called async/await. Implementing our same function using this method results in *much* cleaner code:
 
