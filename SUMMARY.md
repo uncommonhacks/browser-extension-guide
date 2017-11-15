@@ -10,6 +10,4 @@
 * [Running and Debugging](running-debugging.md)
 * [Additional Resources](resources.md)
 * [Advanced Topics](advanced_topics/README.md)
-
-
-
+* [Acknowledgements](acknowledgements.md)

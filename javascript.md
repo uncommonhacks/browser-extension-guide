@@ -2,7 +2,7 @@
 
 The primary programming language used for browser extensions is JavaScript. If you want to read more about JavaScript in general, there is some good info and tutorials [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript). The rest of this page is a very quick intro into the basic syntax of JavaScript.
 
-If you've used C or a similar language before, and the example below makes sense to you, you can head to the page on [Asynchronous JavaScript](async-js), which will probably be new to you, and read that in depth.
+If you've used C or a similar language before, and the example below makes sense to you, you can head to the page on [Asynchronous JavaScript](async-js.md), which will probably be new to you, and read that in depth.
 
 If not, you might want to read this page in a bit more carefully and follow the links, but don't get too bogged down in the details of syntax—once you start writing code things will start to make sense.
 
