@@ -1,8 +1,15 @@
 # Browser Extension Architecture {#anatomy-of-an-extension4}
 
-An extension consists of a collection of files, packaged for distribution and installation. We’ve made an [example extension](https://github.com/uncommonhacks/webextension-starter) that you can start with that implements these pieces and documents the code, but here’s an explanation of the main components:
+An extension consists of a collection of files, packaged for distribution and installation. Browser extensions mainly consist of:
 
-## manifest.json {#manifest-json}
+1. A `manifest.json` file that delcares the extensions name, permissions, and what other components you're included.
+2. A background script (optional) that runs inside the browser and can access information such as web requests.
+3. A content script (optional) that runs inside pages that the user loads, and can communicate with the background script.
+4. A popup, opened with a toolbar button, that consists of a small web page loaded in the popup.
+
+The rest of this page describes each component in a bit more detail and links to some resources with more. We’ve also made an [example extension](https://github.com/uncommonhacks/webextension-starter) that you can start with that implements these pieces and documents the code.
+
+## `manifest.json` {#manifest}
 
 This is the only file that must be present in every extension. It contains basic metadata such as its name, version and the permissions it requires. It also provides pointers to other files in the extension.
 
