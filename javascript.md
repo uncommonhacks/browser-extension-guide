@@ -18,7 +18,7 @@ function printFruits(fruits) {
 	}
 }
 
-const fruits = ["Apples", "Bananas", "Oranges"]
+const fruits = ["Apples", "Bananas", "Oranges"];
 printFruits(fruits);
 
 /* prints:
@@ -76,7 +76,7 @@ function square(x) {
 You can call functions the same way you do in C or similar languages:
 
 ```js
-square(5) // 25
+square(5); // 25
 ```
 
 **More info:**
