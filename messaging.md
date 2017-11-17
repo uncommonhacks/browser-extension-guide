@@ -14,7 +14,13 @@ Popup and other bundled web pages in your extensions run in a priviledged contex
 
 ## Messaging between background and content scripts
 
-Content scripts, which run directly in the pages the user visits, however, are not considered priviledged by the browser. This means that they cannot call most browser APIs, so if, for example, you need your content script to know the current tabs open, you can't just call `browser.tabs.query()` directly. However, you can send a message to the background script, have the background script access the information, and then send a response back. You can do this using [`browser.runtime.sendMessage()`](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/runtime/sendMessage) and [`browser.runtime.onMessage()`](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/runtime/onMessage). Here are a couple of examples:
+Content scripts, which run directly in the pages the user visits, however, are not considered priviledged by the browser. This means that they cannot call most browser APIs, so if, for example, you need your content script to know the current tabs open, you can't just call `browser.tabs.query()` directly. However, you can send a message to the background script, have the background script access the information, and then send a response back. You can do this using [`browser.runtime.sendMessage()`](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/runtime/sendMessage) and [`browser.runtime.onMessage()`](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/runtime/onMessage). 
+
+This is more complicated than it should be because the different browsers want to do things slightly different ways. Our [example extension](https://github.com/uncommonhacks/webextension-starter) implements this in a way that should work on both Chrome and Firefox—if it doesn't please let us know! See [`content.js`](https://github.com/uncommonhacks/webextension-starter/blob/master/content/content.js) and [`background.js`](https://github.com/uncommonhacks/webextension-starter/blob/master/background/background.js) for how this is implemented.
+
+<!-- commented out stuff isn't well-tested/doesn't work -->
+
+<!-- Here are a couple of examples:
 
 #### **Basic example: sending a message from content script, waiting for response**
 
@@ -23,7 +29,7 @@ We have a content script that sends a message to the background script when some
 ```js
 // content-script.js
 
-function notifyBackgroundPage(e) {
+async function notifyBackgroundPage(e) {
   let message = await browser.runtime.sendMessage({
     greeting: "Greeting from the content script"
   });
@@ -49,29 +55,36 @@ browser.runtime.onMessage.addListener(handleMessage);
 
 #### **Advanced example: sending responses asynchronously**
 
-If you don't need to send responses back to the content script, or the responses you're sending are determined synchronously \(i.e. there aren't any `await` or `.then` in your handleMessage function, the code above should work. If you _do_ need to do asynchronous operations in your `handleMessage` function, then things get more complicated—one of the authors of this guide has personally struggled with getting this to work. Specifically, using async/await is error prone, and the documentation about how to handle sending the message asynchrounously is confusing. The following code, however, seems to work:
+If you don't need to send responses back to the content script, or the responses you're sending are determined synchronously \(i.e. there aren't any `await` or `.then` in your handleMessage function, the code above should work. If you _do_ need to do asynchronous operations in your `handleMessage` function, then things get more complicated—one of the authors of this guide has personally struggled with getting this to work. Specifically, using async/await is error prone, and the documentation about how to handle sending the message asynchronously is confusing. The following code, however, seems to work:
+
+```js
+// content-script.js
+async function notifyBackgroundPage(e) {
+  let message = await browser.runtime.sendMessage({
+    type: "listTabs"
+  });
+  console.log("Message from the background script:", message);
+}
+```
 
 ```js
 // background-script.js
 
-function handleMessage(message, sender, sendResponse) {
-  if (message.type === "queryDatabase") {
-    query = queryDatabase(message.query); // async function, returns a promise
-    query.then(res => { // cannot use async/await
-      sendResponse(res);
-    })
-    return true; // this tells browser that we will call sendResponse asynchronously
-  }
+function handleMessage(message, sender) {
+    if (message.type === "listTabs") {
+        const promise = browser.tabs.query({});
+
+        // this function returns a PROMISE
+        // when browser.tabs.query finishes, the result will be passed to the content script
+        // see https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/runtime/onMessage#Sending_an_asynchronous_response_using_a_Promise
+        return promise;
+    }
 }
 
 browser.runtime.onMessage.addListener(handleMessage);
 ```
 
-Notably, the following aspects of this code are important:
-
-* No async/await in `handleMessage`, must use promises directly
-* In `promise.then()`, call `sendResponse()`
-* Outside of promise, return true from `handleMessage` function to tell browser that we will call `sendResponse` asynchronously
+In the MDN documentation for `runtime.onMessage`, this is the ["Sending an asynchronous response using a Promise"](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/runtime/onMessage#Sending_an_asynchronous_response_using_a_Promise) section. -->
 
 ## Alternative messaging methods
 

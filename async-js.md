@@ -84,6 +84,6 @@ async function printOpenTabs() {
 }
 ```
 
-What the `await` keyword does is says "wait for the promise set by `browser.tabs.query({})` to resolve (finish/return), and then set `tabs` to the result." Then, whenever you use `await` in a function, you must declare it as an `async function`. If somewhere else in your code you do something that uses the return value for an async function, you must `await` it there.
+What the `await` keyword does is says "wait for the promise set by `browser.tabs.query({})` to resolve (finish/return), and then set `tabs` to the result." Then, whenever you use `await` in a function, you must declare it as an `async function`. If somewhere else in your code you do something that uses the return value for an async function, you must `await` it there. Under the hood, async/await is just a fancier way to deal with promises.
 
 Overall, for 95% of cases, using async/await is much easier to understand than trying to deal with callbacks or promises. We'll dive into what this means for when you're building your browser extension in the next section.

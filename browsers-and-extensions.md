@@ -1,7 +1,5 @@
 # Background: Web Browsers and Browser Extensions {#background-web-browsers-and-browser-extensions}
 
-Browser extensions are cool.
-
 Extensions are bits of code that modify the functionality of a web browser. They are written using standard web technologies - JavaScript, HTML, and CSS - plus some dedicated JavaScript APIs. Among other things, extensions can add new features to the browser or change the appearance or content of particular websites.
 
 Browser extensions are one of the few things in the tech world that are _close_ to being cross-platform. Most of the major browsers (Chrome, Firefox, Microsoft Edge, Opera)[^1] have standardized (more or less) on the same toolset, which is based on the framework and APIs[^2] first implemented in Google Chrome. Firefox historically had an entirely different framework for add-ons, but recently implemented the toolset used by Chrome and phased out the other add-on formats. Microsoft and Opera have likewise made similar moves in recent years.
