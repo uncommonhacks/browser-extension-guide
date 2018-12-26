@@ -1,4 +1,10 @@
-# JavaScript {#javascript}
+---
+title: JavaScript
+has_children: true
+nav_order: 4
+---
+
+# JavaScript
 
 The primary programming language used for browser extensions is JavaScript. If you want to read more about JavaScript in general, there is some good info and tutorials [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript). The rest of this page is a very quick intro into the basic syntax of JavaScript.
 

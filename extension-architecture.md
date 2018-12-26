@@ -1,4 +1,10 @@
-# Browser Extension Architecture {#anatomy-of-an-extension4}
+---
+title: Browser Extension Architecture
+has_children: false
+nav_order: 3
+---
+
+# Browser Extension Architecture
 
 An extension consists of a collection of files, packaged for distribution and installation. Browser extensions mainly consist of:
 
@@ -9,7 +15,7 @@ An extension consists of a collection of files, packaged for distribution and in
 
 The rest of this page describes each component in a bit more detail and links to some resources with more. We’ve also made an [example extension](https://github.com/uncommonhacks/webextension-starter) that you can start with that implements these pieces and documents the code.
 
-## `manifest.json` {#manifest}
+## `manifest.json`
 
 This is the only file that must be present in every extension. It contains basic metadata such as its name, version and the permissions it requires. It also provides pointers to other files in the extension.
 
@@ -20,19 +26,19 @@ This manifest can also contain pointers to several other types of files:
 * [Content scripts](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Anatomy_of_a_WebExtension#Content_scripts): JavaScript included with your extension, that you will inject into web pages.
 * [Popups, sidebars, and options pages](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Anatomy_of_a_WebExtension#Sidebars_popups_options_pages): HTML documents that provide content for various user interface components.
 
-## Background Scripts {#background-scripts}
+## Background Scripts
 
 Extensions often need to maintain long-term state or perform long-term operations independently of the lifetime of any particular web page or browser window. That is what background scripts are for. Background scripts are loaded as soon as the extension is loaded and stay loaded until the extension is disabled or uninstalled. You can use any of the [WebExtension APIs](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API) in the script, as long as you have requested the necessary [permissions](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/permissions).
 
 You can include a background script using the `background` key in `manifest.json`. You can specify multiple background scripts: if you do, they run in the same context, just like multiple scripts that are loaded into a single web page.
 
-## Content Scripts {#content-scripts}
+## Content Scripts
 
 Use content scripts to access and manipulate web pages. Content scripts are loaded into web pages and run in the context of that particular page. With a content script, you can write code that runs inside pages that you visit in the browser, and do things like directly modify elements on the page. You also specify content scripts in `manifest.json`, where you can specify whether the script should run on all pages or only on specific domains.
 
 Because content scripts have direct access to the content of every page you visit, there are more restrictions about what they can do. Content scripts are not able to access most privileged browser APIs. This means that, for example, you can’t get a list of the currently open tabs directly from a content script, but you can get this information through intra-extension messaging APIs—you can write code that sends a message to the background script, the background script can ask the browser for the privileged information, and then send the result back to the content script. Our example extension shows how you can do this.
 
-## Popups, sidebars, options pages {#popups-sidebars-options-pages}
+## Popups, sidebars, options pages
 
 Your extension can include various user interface components whose content is defined using an HTML document:
 

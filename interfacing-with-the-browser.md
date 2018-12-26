@@ -1,3 +1,9 @@
+---
+title: Inferfacing with the Browser
+has_children: true
+nav_order: 5
+---
+
 # Inferfacing with the Browser
 
 In the last section, we used the `browser.tabs.query()` function to get the currently open tabs. This is one of the many *APIs* provided by the browser. Essentially, the browser makers have defined a set of functions you can call to get information from the browser and set and store data.

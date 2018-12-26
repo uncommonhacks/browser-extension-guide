@@ -1,3 +1,10 @@
+---
+title: Messaging
+parent: Inferfacing with the Browser
+has_children: false
+nav_order: 6
+---
+
 # Messaging
 
 _or "how to get different parts of your browser extension to talk to each other"_
