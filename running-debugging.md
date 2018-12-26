@@ -34,7 +34,7 @@ Alternatively, you can run the extension from the command line using the [web-ex
 
 Both Chrome and Firefox also include handy debuggers to help you debug your code. 
 
-When you're writing code, you can include `console.log("hello!")` statements in your code \(like print statements in any other language\). These statements are printed in the browser's debugger—see [Chrome](https://developer.chrome.com/extensions/tut_debugging) and [Firefox](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Debugging) documentation. There also is a view to step through your extensions code ans set breakpoints, much like GDB, if you've used that before for a class.
+When you're writing code, you can include `console.log("hello!")` statements in your code \(like print statements in any other language\). These statements are printed in the browser's debugger—see [Chrome](https://developer.chrome.com/extensions/tut_debugging) and [Firefox](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Debugging) documentation. There also is a view to step through your extensions code and set breakpoints, much like GDB, if you've used that before for a class.
 
 
 
