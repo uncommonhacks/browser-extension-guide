@@ -55,7 +55,7 @@ You'll see most of the Firefox documentation use this method, and implementing o
 ```js
 function printOpenTabs() {
     let queryPromise = browser.tabs.query({});
-    queryPromise.then((tabs) ==> {
+    queryPromise.then((tabs) => {
         for (let tab of tabs) {
             console.log(tab.title);
         }
@@ -72,7 +72,7 @@ This method is *slightly* better, as it is more clear what are arguments to the 
 
 ### 3. Async/Await
 
-But really all we want to do is get the current tabs, and then print them. The whole concept of asynchronous code execution is nice at times, but for most cases it ends up making life more difficult. The people who make the JavaScript standard eventually realized this, and came up with a new method, called async/await. Implementing our same function using this method results in *much* cleaner code:
+But all we really want to do is get the current tabs, and then print them. The whole concept of asynchronous code execution is nice at times, but for most cases it ends up making life more difficult. The people who make the JavaScript standard eventually realized this, and came up with a new method, called async/await. Implementing our same function using this method results in *much* cleaner code:
 
 ```js
 async function printOpenTabs() {

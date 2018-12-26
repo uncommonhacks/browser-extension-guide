@@ -88,5 +88,5 @@ In the MDN documentation for `runtime.onMessage`, this is the ["Sending an async
 
 ## Alternative messaging methods
 
-There also is another way to send and recieve messages: you can open a "port" between two components with [`browser.runtime.connect()`](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/runtime/connect), and then send and recieve messages through that port. You may find code online that uses it, but it can be difficult to work with and unless you have some need that the above methods don't satisfy I wouldn't reccomend using it.
+There also is another way to send and recieve messages: you can open a "port" between two components with [`browser.runtime.connect()`](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/runtime/connect), and then send and recieve messages through that port. You may find code online that uses it, but it can be difficult to work with and unless you have some need that the above methods don't satisfy I wouldn't recommend using it.
 
