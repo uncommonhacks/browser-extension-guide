@@ -1,4 +1,10 @@
-# Acknowledgements {#acknowledgements}
+---
+title: Acknowledgements
+has_children: false
+nav_order: 20
+---
+
+# Acknowledgements
 
 This guide was written by Ben Weinshel to help support projects at [Uncommon Makes](https://make.uncommonhacks.com).
 

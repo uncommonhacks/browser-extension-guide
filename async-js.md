@@ -1,3 +1,10 @@
+---
+title: Asynchronous JavaScript
+parent: JavaScript
+has_children: false
+nav_order: 1
+---
+
 # Asynchronous JavaScript
 
 One unique aspect of JavaScript is the way it handles what is called asynchronous programming.

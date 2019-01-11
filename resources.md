@@ -1,4 +1,10 @@
-# Additional Resources {#good-resources}
+---
+title: Additional Resources
+has_children: false
+nav_order: 8
+---
+
+# Additional Resources
 
 [MDN](https://developer.mozilla.org/en-US/Add-ons/WebExtensions): if you could only have one resource for making browser extensions, this would be it.
 

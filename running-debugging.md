@@ -1,4 +1,10 @@
-# Running and Debugging {#running-your-extension}
+---
+title: Running and Debugging
+has_children: false
+nav_order: 7
+---
+
+# Running and Debugging
 
 Your extension should run without modification in both Chrome and Firefox.
 
